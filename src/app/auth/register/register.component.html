@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center align-items-center m-1">
+  <form (ngSubmit)="submit()" class="p-4">
+    <h1 class="text-center m-1 p-1 text-secondary">Login</h1>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        [(ngModel)]="form.email"
+        type="email"
+        class="form-control"
+        id="email"
+        #email="ngModel"
+        required
+      />
+    </div>
+    <div [hidden]="email.valid" class="p-1 m-1 bg-danger">
+      email field must be valid
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        [(ngModel)]="form.password"
+        type="password"
+        class="form-control"
+        id="password"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="rpassword" class="form-label">R-Password</label>
+      <input
+        [(ngModel)]="form.rpassword"
+        type="rpassword"
+        class="form-control"
+        id="rpassword"
+      />
+    </div>
+    <div class="d-grid gap-1">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

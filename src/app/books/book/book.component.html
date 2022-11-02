@@ -1,0 +1,27 @@
+<div class="container">
+  <li class="list-item">
+    <div class="img">
+      <img [src]="book.image" width="100" [alt]="book.name" />
+    </div>
+    <div class="explanation">
+      <p class="title">
+        {{ book.name | titlecase }} by {{ book.author | titlecase }}
+      </p>
+      <p class="currency">{{ book.amount | currency: "TRY" }}</p>
+      <button
+        class="btn btn-warning p-2"
+        *ngIf="!isInCart"
+        (click)="addToCart()"
+      >
+        Add To Card
+      </button>
+      <button
+        class="btn btn-warning p-2"
+        *ngIf="isInCart"
+        (click)="removeFromCart()"
+      >
+        Remove from Cart
+      </button>
+    </div>
+  </li>
+</div>
